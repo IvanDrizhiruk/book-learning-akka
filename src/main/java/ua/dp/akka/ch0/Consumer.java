@@ -1,4 +1,4 @@
-package ua.dp;
+package ua.dp.akka.ch0;
 
 import akka.actor.UntypedActor;
 
