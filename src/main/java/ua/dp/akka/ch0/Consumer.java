@@ -1,8 +1,8 @@
-package ua.dp;
+package ua.dp.akka.ch0;
 
-import akka.actor.UntypedActor;
+import akka.actor.UntypedAbstractActor;
 
-public class Consumer extends UntypedActor {
+public class Consumer extends UntypedAbstractActor {
 
     @Override
     public void onReceive(Object msg) throws Exception {
