@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ua.dp.learning.akka</groupId>
 	<artifactId>learning-akka</artifactId>
-	<packaging>jar</packaging>
+	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>learning-akka</name>
 
@@ -13,6 +13,10 @@
 		<jdk.version>1.8</jdk.version>
 		<akka.version>2.5.6</akka.version>
 	</properties>
+
+	<modules>
+		<module>ch2</module>
+	</modules>
 
 	<build>
 		<plugins>
@@ -28,34 +32,34 @@
 		</plugins>
 	</build>
 	
-	<dependencies>
+	<dependencyManagement>
+		<dependencies>
 
-		<dependency>
-			<groupId>com.typesafe.akka</groupId>
-			<artifactId>akka-actor_2.11</artifactId>
-			<version>${akka.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.typesafe.akka</groupId>
-			<artifactId>akka-testkit_2.11</artifactId>
-			<version>${akka.version}</version>
-			<scope>test</scope>
-		</dependency>
+			<dependency>
+				<groupId>com.typesafe.akka</groupId>
+				<artifactId>akka-actor_2.11</artifactId>
+				<version>${akka.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.typesafe.akka</groupId>
+				<artifactId>akka-testkit_2.11</artifactId>
+				<version>${akka.version}</version>
+				<scope>test</scope>
+			</dependency>
 
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.12</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.unitils</groupId>
+				<artifactId>unitils-core</artifactId>
+				<version>3.4.6</version>
+				<scope>test</scope>
+			</dependency>
 
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.unitils</groupId>
-			<artifactId>unitils-core</artifactId>
-			<version>3.4.6</version>
-			<scope>test</scope>
-		</dependency>
-
-	</dependencies>
+		</dependencies>
+	</dependencyManagement>
 </project>

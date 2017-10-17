@@ -17,7 +17,7 @@ import akka.actor.Props;
 import scala.concurrent.Future;
 import ua.dp.akka.ch2.pong.JavaPongActor;
 
-public class PongActorTest {
+public class JavaPongActorTest {
 	ActorSystem system = ActorSystem.create();
 	ActorRef actorRef = system.actorOf(Props.create(JavaPongActor.class), "BruceWillis");
 
@@ -26,6 +26,7 @@ public class PongActorTest {
 		Future sFuture = ask(actorRef, "Ping", 1000);
 		final CompletionStage<String> cs = toJava(sFuture);
 		final CompletableFuture<String> jFuture = (CompletableFuture<String>) cs;
+
 		assertEquals("Pong", jFuture.get(1000, TimeUnit.MILLISECONDS));
 	}
 
@@ -34,6 +35,7 @@ public class PongActorTest {
 		Future sFuture = ask(actorRef, "unknown", 1000);
 		final CompletionStage<String> cs = toJava(sFuture);
 		final CompletableFuture<String> jFuture = (CompletableFuture<String>) cs;
+
 		jFuture.get(1000, TimeUnit.MILLISECONDS);
 	}
 
@@ -58,8 +60,7 @@ public class PongActorTest {
 	 */
 	@Test
 	public void shouldTransformAsync() throws Exception {
-		CompletionStage cs = askPong("Ping").
-				thenCompose(x -> askPong("Ping"));
+		CompletionStage cs = askPong("Ping").thenCompose(x -> askPong("Ping"));
 		assertEquals(get(cs), "Pong");
 	}
 
