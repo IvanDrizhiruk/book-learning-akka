@@ -3,29 +3,18 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>ua.dp.learning.akka</groupId>
-		<artifactId>learning-akka</artifactId>		
+		<artifactId>ch1</artifactId>
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>ch2</artifactId>	
-	<packaging>pom</packaging>
-	<version>1.0-SNAPSHOT</version>
-	<name>ch2</name>
-
-	<modules>
-		<module>akkademy-db-messages</module>
-		<module>akkademy-db-server</module>
-		<module>akkademy-db-client</module>
-	</modules>
+	<artifactId>akkademy-db</artifactId>
+	<packaging>jar</packaging>
+	<name>akkademy-db</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
 			<artifactId>akka-actor_2.11</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.typesafe.akka</groupId>
-			<artifactId>akka-remote_2.11</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
@@ -42,6 +31,10 @@
 			<groupId>org.unitils</groupId>
 			<artifactId>unitils-core</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
 		</dependency>
 	</dependencies>
 </project>

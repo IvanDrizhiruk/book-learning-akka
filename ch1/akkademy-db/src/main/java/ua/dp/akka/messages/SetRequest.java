@@ -1,4 +1,4 @@
-package ua.dp.akka.ch1.messages;
+package ua.dp.akka.messages;
 
 public class SetRequest {
     private final String key;

@@ -1,8 +1,10 @@
 package com.akkademy;
 
+import java.util.concurrent.CompletableFuture;
+
 import org.junit.Test;
 
-import java.util.concurrent.CompletableFuture;
+import ua.dp.akka.JClient;
 
 public class JClientIntegrationTest {
     JClient client = new JClient("127.0.0.1:2552");

@@ -1,4 +1,4 @@
-package ua.dp.akka.ch1;
+package ua.dp.akka;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -13,11 +13,11 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.testkit.TestActorRef;
-import ua.dp.akka.ch1.messages.SetRequest;
+import ua.dp.akka.messages.SetRequest;
 
 public class AkkaDemyDbTest {
 
-	private ActorSystem system = ActorSystem.create();
+	private ActorSystem system = ActorSystem.create();;
 
 	@Test
 	public void itShouldPlaceKeyValueFromSetMessageIntoMap() {

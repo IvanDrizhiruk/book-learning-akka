@@ -1,4 +1,4 @@
-package pong;
+package ua.dp.akka.pong;
 
 import static akka.pattern.Patterns.ask;
 import static org.junit.Assert.assertEquals;
@@ -15,7 +15,6 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import scala.concurrent.Future;
-import ua.dp.akka.ch2.pong.JavaPongActor;
 
 public class JavaPongActorTest {
 	ActorSystem system = ActorSystem.create();

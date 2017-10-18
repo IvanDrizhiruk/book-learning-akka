@@ -1,4 +1,4 @@
-package ua.dp.akka.ch2.pong;
+package ua.dp.akka.pong;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;

@@ -1,4 +1,4 @@
-package ua.dp.akka.ch0;
+package ua.dp.akka;
 
 import java.util.concurrent.TimeUnit;
 

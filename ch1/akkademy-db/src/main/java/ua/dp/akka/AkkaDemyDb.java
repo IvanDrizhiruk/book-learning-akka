@@ -1,4 +1,4 @@
-package ua.dp.akka.ch1;
+package ua.dp.akka;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import akka.actor.AbstractActor;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
-import ua.dp.akka.ch1.messages.SetRequest;
+import ua.dp.akka.messages.SetRequest;
 
 public class AkkaDemyDb extends AbstractActor {
 	private final LoggingAdapter log = Logging.getLogger(context().system(), this);
