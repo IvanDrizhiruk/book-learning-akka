@@ -1,13 +1,15 @@
-package com.akkademy;
+package ua.dp.akka;
 
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.testkit.TestActorRef;
-import com.akkademy.messages.SetRequest;
-import org.junit.Test;
+import ua.dp.akka.AkkademyDb;
+import ua.dp.akka.messages.SetRequest;
 
 public class AkkademyDbTest {
 

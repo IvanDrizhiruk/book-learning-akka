@@ -13,7 +13,8 @@
 	<name>ch2</name>
 
 	<modules>
-		<module>akkademy-db</module>
+		<module>akkademy-db-messages</module>
+		<module>akkademy-db-server</module>
 		<module>akkademy-db-client</module>
 	</modules>
 

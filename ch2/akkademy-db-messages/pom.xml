@@ -7,18 +7,11 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>akkademy-db-client</artifactId>
+	<artifactId>akkademy-db-messages</artifactId>
 	<packaging>jar</packaging>
-	<name>akkademy-db-client</name>
+	<name>akkademy-db-messages</name>
 
 	<dependencies>
-		<dependency>
-			<groupId>ua.dp.learning.akka</groupId>
-			<artifactId>akkademy-db-messages</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-
-
 		<dependency>
 			<groupId>com.typesafe.akka</groupId>
 			<artifactId>akka-actor_2.11</artifactId>

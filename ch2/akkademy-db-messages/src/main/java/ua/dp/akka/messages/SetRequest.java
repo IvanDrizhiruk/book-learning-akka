@@ -1,4 +1,4 @@
-package com.akkademy.messages;
+package ua.dp.akka.messages;
 
 import java.io.Serializable;
 
