@@ -8,6 +8,7 @@ import akka.actor.Status;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.pf.ReceiveBuilder;
+import ua.dp.akka.messages.DeleteRequest;
 import ua.dp.akka.messages.GetRequest;
 import ua.dp.akka.messages.KeyNotFoundException;
 import ua.dp.akka.messages.SetRequest;
@@ -21,6 +22,7 @@ public class AkkademyDb extends AbstractActor {
         return ReceiveBuilder.create()
                 .match(SetRequest.class, this::handleSetRequest)
                 .match(GetRequest.class, this::handleGetRequest)
+                .match(DeleteRequest.class, this::handleDeleteRequest)
                 .matchAny(this::handleAllOther)
                 .build();
     }
@@ -38,6 +40,14 @@ public class AkkademyDb extends AbstractActor {
 				? new Status.Failure(new KeyNotFoundException(message.key))
 				: value;
         sender().tell(response, self());
+    }
+
+    private void handleDeleteRequest(DeleteRequest message) {
+        log.info("Received Delete request: {}", message);
+
+        Object removedValue = map.remove(message.key);
+
+        sender().tell(removedValue, self());
     }
 
     private void handleAllOther(Object data) {

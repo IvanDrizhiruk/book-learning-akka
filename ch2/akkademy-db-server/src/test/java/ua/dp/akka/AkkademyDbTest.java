@@ -9,6 +9,7 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.testkit.TestActorRef;
 import ua.dp.akka.AkkademyDb;
+import ua.dp.akka.messages.DeleteRequest;
 import ua.dp.akka.messages.SetRequest;
 
 public class AkkademyDbTest {
@@ -22,6 +23,18 @@ public class AkkademyDbTest {
 
         AkkademyDb akkademyDb = actorRef.underlyingActor();
         assertEquals(akkademyDb.map.get("key"), "value");
+    }
+
+
+    @Test
+    public void valueShouldBeRemovedFromMap() {
+        TestActorRef<AkkademyDb> actorRef = TestActorRef.create(system, Props.create(AkkademyDb.class));
+        actorRef.tell(new SetRequest("key1", "value1"), ActorRef.noSender());
+        actorRef.tell(new SetRequest("key2", "value2"), ActorRef.noSender());
+        actorRef.tell(new DeleteRequest("key1"), ActorRef.noSender());
+
+        AkkademyDb akkademyDb = actorRef.underlyingActor();
+        assertEquals(akkademyDb.map.get("key2"), "value2");
     }
 
 }
