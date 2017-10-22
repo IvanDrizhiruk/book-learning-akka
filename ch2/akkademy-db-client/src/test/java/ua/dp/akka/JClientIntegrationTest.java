@@ -1,4 +1,4 @@
-package com.akkademy;
+package ua.dp.akka;
 
 import java.util.concurrent.CompletableFuture;
 
