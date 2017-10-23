@@ -48,6 +48,13 @@
 			</dependency>
 
 			<dependency>
+				<groupId>com.syncthemall</groupId>
+				<artifactId>boilerpipe</artifactId>
+				<version>1.2.2</version>
+			</dependency>
+
+
+			<dependency>
 				<groupId>com.typesafe.akka</groupId>
 				<artifactId>akka-testkit_2.11</artifactId>
 				<version>${akka.version}</version>

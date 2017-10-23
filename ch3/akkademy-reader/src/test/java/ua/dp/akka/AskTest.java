@@ -1,21 +1,24 @@
 package ua.dp.akka;
 
+import static akka.pattern.Patterns.ask;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Test;
+
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.actor.Status;
 import akka.testkit.TestProbe;
 import akka.util.Timeout;
-import com.akkademy.messages.GetRequest;
-import org.junit.Test;
 import scala.concurrent.Await;
 import scala.concurrent.Future;
-
-import static akka.pattern.Patterns.ask;
+import ua.dp.akka.messages.GetRequest;
 
 public class AskTest {
     ActorSystem system = ActorSystem.create("testSystem");
-    Timeout timeout = Timeout.longToTimeout(10000);
+    Timeout timeout = Timeout.apply(10000, TimeUnit.MILLISECONDS);
 
     TestProbe cacheProbe = new TestProbe(system);
     TestProbe httpClientProbe = new TestProbe(system);

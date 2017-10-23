@@ -6,16 +6,18 @@ import akka.actor.Props;
 import akka.actor.Status;
 import akka.testkit.TestProbe;
 import akka.util.Timeout;
-import com.akkademy.messages.GetRequest;
 import org.junit.Test;
 import scala.concurrent.Await;
 import scala.concurrent.Future;
+import ua.dp.akka.messages.GetRequest;
 
 import static akka.pattern.Patterns.ask;
 
+import java.util.concurrent.TimeUnit;
+
 public class TellTest {
     ActorSystem system = ActorSystem.create("testSystem");
-    Timeout timeout = Timeout.longToTimeout(10000);
+    Timeout timeout = Timeout.apply(10000, TimeUnit.MILLISECONDS);
 
     TestProbe cacheProbe = new TestProbe(system);
     TestProbe httpClientProbe = new TestProbe(system);
@@ -42,6 +44,4 @@ public class TellTest {
         assert(result.contains("I’ve been writing a lot in emacs lately"));
         assert(!result.contains("<body>"));
     }
-
-
 }
